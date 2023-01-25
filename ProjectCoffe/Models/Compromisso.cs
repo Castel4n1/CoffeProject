@@ -8,9 +8,9 @@
             OrganizacaoId = organizacaoId;
         }
 
-        public Pessoa Pessoa { get; set; }
+        public Pessoa? Pessoa { get; set; }
         public int PessoaId { get; set; }
-        public Organizacao Organizacao { get; set; }
+        public Organizacao? Organizacao { get; set; }
         public int OrganizacaoId { get; set; }
     }
 }

@@ -7,7 +7,7 @@
             Id = id;
             Semana = semana;
         }
-
+        
         public int Id { get; set; }
         public string Semana { get; set; }
     }

@@ -6,14 +6,11 @@ using System;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-string BancoConexao =
-              builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContextPool<DatabaseContext>(options =>
-                options.UseSqlServer(BancoConexao,
-                      ServerVersion.AutoDetect(BancoConexao)));
-
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DatabaseContext>
+    (options => options.UseSqlServer(
+        "Data Source=(localdb)\\MSSQLLocalDB;Database=Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
 
 var app = builder.Build();
 
